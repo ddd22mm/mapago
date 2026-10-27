@@ -1,0 +1,47 @@
+{
+  "project": {
+    "name": "마파고",
+    "description": "일본식 4인 리치 마작 AI 대국 및 코치 시스템",
+    "language": "ko-KR",
+    "notionProject": "마파고"
+  },
+  "product": {
+    "players": 4,
+    "humanPlayers": 1,
+    "aiPlayers": 3,
+    "initialApproach": "rule-based",
+    "reinforcementLearningRequiredForMvp": false
+  },
+  "scope": {
+    "mvp": [
+      "4인 1인 대 AI 대국",
+      "엔진 기반 합법 행동 처리",
+      "규칙 기반 AI와 난이도 프로필",
+      "샹텐·유효패·추천 타패 및 근거",
+      "대국 저장과 주요 판단 복기"
+    ],
+    "deferred": [
+      "강화학습 정책 및 대규모 자기 대국",
+      "멀티플레이",
+      "클라우드 분석",
+      "모바일 지원"
+    ]
+  },
+  "technology": {
+    "status": "undecided",
+    "candidates": {
+      "frontend": ["React"],
+      "backend": ["Python", "FastAPI"],
+      "gameEngine": ["RiichiEnv"],
+      "rating": ["OpenSkill"]
+    },
+    "requireOfficialDocsAndLicenseReview": true
+  },
+  "development": {
+    "defaultLanguage": "ko-KR",
+    "requireLegalActionsFromEngine": true,
+    "keepAiLogicSeparateFromUi": true,
+    "protectHiddenInformation": true,
+    "reportUntestedChangesAsUntested": true
+  }
+}
