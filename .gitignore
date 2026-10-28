@@ -2,5 +2,6 @@
 .tools/
 .research/
 artifacts/
+*.internal.json
 __pycache__/
 *.pyc

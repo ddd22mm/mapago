@@ -28,7 +28,18 @@
     ]
   },
   "technology": {
-    "status": "engine-prototype-verified",
+    "status": "auto-match-replay-verified",
+    "stage2": {
+      "entrypoint": "python -m mapago_tools.match",
+      "modes": ["kyoku", "east", "hanchan"],
+      "botPolicies": ["first-legal-v1", "random-legal-v1"],
+      "storage": "local-json-prototype",
+      "internalSchema": "mapago.match.v1",
+      "seatReplaySchema": "mapago.seat-replay.v1",
+      "replay": "saved-legal-actions-with-state-and-event-checks",
+      "report": "docs/stage-2-auto-match.md",
+      "operationalStorageAndRetentionUndecided": true
+    },
     "stage1": {
       "engine": "RiichiEnv",
       "version": "0.4.11",

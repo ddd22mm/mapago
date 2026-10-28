@@ -1,0 +1,58 @@
+{
+  "engine": {
+    "name": "riichienv",
+    "version": "0.4.11"
+  },
+  "mode": "east",
+  "rule": "tenhou",
+  "policies": [
+    {
+      "seat": 0,
+      "name": "random-legal",
+      "version": "1"
+    },
+    {
+      "seat": 1,
+      "name": "random-legal",
+      "version": "1"
+    },
+    {
+      "seat": 2,
+      "name": "random-legal",
+      "version": "1"
+    },
+    {
+      "seat": 3,
+      "name": "random-legal",
+      "version": "1"
+    }
+  ],
+  "verified": true,
+  "steps": 712,
+  "decisions": 714,
+  "rounds": 8,
+  "scores": [
+    25000,
+    25000,
+    25000,
+    25000
+  ],
+  "ranks": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "event_counts": {
+    "chi": 37,
+    "dahai": 617,
+    "end_game": 1,
+    "end_kyoku": 8,
+    "pon": 20,
+    "ryukyoku": 8,
+    "start_game": 1,
+    "start_kyoku": 8,
+    "tsumo": 560
+  },
+  "events_sha256": "96e07a2737ee49fbc282ed1c0452a52892b2859b558e02ea55c7d1805bfac29c"
+}
