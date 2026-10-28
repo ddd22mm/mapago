@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>마파고 · 나의 마작 연습실</title>
+  <meta name="description" content="AI 세 명과 함께하는 리치 마작 한 국 연습">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="마파고 홈"><span class="brand-mark">東</span><span>마파고<small>나의 마작 연습실</small></span></a>
+    <div class="nav-label">대국 연습 <span class="nav-dot"></span></div>
+    <div class="header-right"><span class="local-badge"><i></i>로컬 연습실</span><button id="new-game" class="button subtle">새 대국 <span>↗</span></button></div>
+  </header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">RIICHI MAHJONG / PRACTICE</p><h1>차분하게, 한 수씩.</h1><p>세 명의 AI와 함께, 나만의 속도로 연습하세요.</p></div><div class="session-tags"><span>4인 리치 마작</span><span>한 국 연습</span></div></div>
+    <div id="notice" class="notice" role="alert" hidden><span id="notice-text"></span><button id="retry" class="button subtle">다시 연결</button></div>
+    <div class="workspace">
+      <section class="play-area" aria-label="대국 테이블">
+        <div class="table-bar"><div><span class="live-dot"></span><strong id="round-label">대국 준비</strong><span id="rule-label" class="muted">천봉 프리셋</span></div><span id="status-label">시작을 기다리고 있어요</span></div>
+        <div id="table" class="table">
+          <div class="felt-lines"></div>
+          <div class="opponent opposite"><div class="player-label"><span class="wind">西</span>AI 2 <span class="points" id="table-score-2">25,000</span></div><div class="backs" id="backs-2" aria-label="AI 2의 비공개 손패"></div><div class="melds" id="melds-2"></div></div>
+          <div class="opponent left"><div class="player-label"><span class="wind">北</span>AI 3 <span class="points" id="table-score-3">25,000</span></div><div class="backs" id="backs-3" aria-label="AI 3의 비공개 손패"></div><div class="melds" id="melds-3"></div></div>
+          <div class="opponent right"><div class="player-label"><span class="wind">南</span>AI 1 <span class="points" id="table-score-1">25,000</span></div><div class="backs" id="backs-1" aria-label="AI 1의 비공개 손패"></div><div class="melds" id="melds-1"></div></div>
+          <div class="river river-2" id="river-2" aria-label="AI 2의 버림패"></div>
+          <div class="river river-3" id="river-3" aria-label="AI 3의 버림패"></div>
+          <div class="river river-1" id="river-1" aria-label="AI 1의 버림패"></div>
+          <div class="river river-0" id="river-0" aria-label="나의 버림패"></div>
+          <div class="table-center"><span id="center-round">東一局</span><div class="wall-count"><strong id="remaining">—</strong><small>남은 패</small></div><div class="round-counters"><span id="honba">0 본장</span><span id="sticks">공탁 0</span></div></div>
+          <div class="dora-box"><span>도라 표시패</span><div id="dora"></div></div>
+          <div class="self-label"><span class="wind">東</span> 나 <span class="dealer-badge">친</span><span id="self-score">25,000</span></div>
+          <div id="table-empty" class="table-empty"><span class="empty-mark">發</span><h2>오늘의 첫 한 수</h2><p>패를 받고, 가볍게 한 국 시작해 볼까요?</p><button id="start-table" class="button primary">대국 시작 <span>→</span></button></div>
+        </div>
+        <div class="hand-panel">
+          <div class="hand-heading"><div><span class="hand-indicator"></span><strong id="hand-title">나의 손패</strong><span id="hand-hint">새 대국을 시작해 주세요.</span></div><span class="hand-count" id="hand-count">0장</span></div>
+          <div id="hand" class="hand" role="group" aria-label="나의 손패"></div>
+          <div id="own-melds" class="own-melds"></div>
+          <div class="action-row"><span id="selected-label" class="selected-label">패를 선택하면 이곳에 표시됩니다.</span><div id="actions" class="action-buttons"></div></div>
+        </div>
+        <div class="under-table"><span><span class="tiny-mark">✦</span> 서두르지 않아도 괜찮아요. 내 차례에는 시간 제한이 없습니다.</span><span>천천히, 정확하게.</span></div>
+      </section>
+      <aside class="sidebar">
+        <section class="side-card"><div class="card-title"><h2>이번 대국</h2><span class="small-tag">동1국</span></div><div class="score-list" id="score-list"></div><div class="policy-note"><span>연습 상대</span><strong id="policy-label">랜덤 합법 행동 봇</strong><small>현재 AI의 실력은 측정되지 않았습니다.</small></div></section>
+        <section class="side-card timeline-card"><div class="card-title"><h2>대국 흐름</h2><span class="muted">최근 행동</span></div><ol id="timeline" class="timeline"><li class="timeline-empty">대국을 시작하면 기록이 쌓여요.</li></ol></section>
+        <section class="help-card"><span class="help-icon">?</span><div><h2>한 수를 두는 방법</h2><p>손패를 골라 <b>타패</b>를 누르세요.<br>치·퐁·리치 등은 가능한 순간에 표시돼요.</p><div class="keys"><kbd>←</kbd><kbd>→</kbd> 패 선택 <kbd>D</kbd> 타패 <kbd>Esc</kbd> 패스</div></div></section>
+      </aside>
+    </div>
+    <footer><span>MAPAGO <span class="footer-line"></span> 나만의 리치 마작 연습실</span><span>한 국의 경험이, 다음 한 수를 만듭니다.</span></footer>
+  </main>
+  <dialog id="setup-dialog" aria-labelledby="setup-title"><form id="setup-form"><p class="eyebrow">A NEW HAND</p><h2 id="setup-title">새로운 한 국</h2><p class="dialog-description">동1국, 친으로 시작합니다.<br>지금 진행 중인 대국은 새 대국으로 바뀝니다.</p><label for="rule">규칙 프리셋</label><select id="rule"><option value="tenhou">천봉 프리셋</option><option value="mjsoul">작혼 프리셋</option></select><label for="policy">AI 행동 방식</label><select id="policy"><option value="random-legal">랜덤 합법 행동</option><option value="first-legal">첫 번째 합법 행동</option></select><p class="form-note">실력별 AI와 코칭은 준비 중입니다.</p><div class="dialog-actions"><button id="cancel-setup" type="button" class="button subtle">취소</button><button id="confirm-start" class="button primary" type="submit">대국 시작 →</button></div></form></dialog>
+  <dialog id="result-dialog" aria-labelledby="result-title"><p class="eyebrow">HAND COMPLETE</p><h2 id="result-title">한 국을 마쳤어요.</h2><p id="result-description" class="dialog-description"></p><div id="result-scores" class="result-scores"></div><div class="dialog-actions"><button id="close-result" class="button subtle">테이블 보기</button><button id="download" class="button subtle">내 기록 저장</button><button id="play-again" class="button primary">다음 연습 →</button></div></dialog>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>

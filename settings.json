@@ -28,7 +28,21 @@
     ]
   },
   "technology": {
-    "status": "auto-match-replay-verified",
+    "status": "human-ui-implemented-browser-qa-pending",
+    "stage3": {
+      "entrypoint": "python -m mapago_tools.server",
+      "frontend": "HTML/CSS/JavaScript",
+      "backend": "Python-standard-library-loopback-HTTP",
+      "bind": "127.0.0.1",
+      "defaultPort": 8765,
+      "gameMode": "kyoku",
+      "humanSeat": 0,
+      "storage": "in-memory-browser-session",
+      "report": "docs/stage-3-human-ui.md",
+      "apiVerified": true,
+      "browserVerified": false,
+      "scope": "local-prototype"
+    },
     "stage2": {
       "entrypoint": "python -m mapago_tools.match",
       "modes": ["kyoku", "east", "hanchan"],

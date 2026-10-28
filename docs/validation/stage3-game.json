@@ -1,0 +1,33 @@
+{
+  "scope": "local-human-session-api",
+  "browser_verified": false,
+  "human_choices": 23,
+  "verified": true,
+  "steps": 88,
+  "decisions": 88,
+  "rounds": 1,
+  "scores": [
+    25000,
+    25000,
+    25000,
+    25000
+  ],
+  "ranks": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "event_counts": {
+    "chi": 5,
+    "dahai": 78,
+    "end_game": 1,
+    "end_kyoku": 1,
+    "pon": 3,
+    "ryukyoku": 1,
+    "start_game": 1,
+    "start_kyoku": 1,
+    "tsumo": 70
+  },
+  "events_sha256": "28c70704043896e774b226455afa623f7af8a95baf9bc4d9bd70042d6cfc88b1"
+}
