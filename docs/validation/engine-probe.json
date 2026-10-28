@@ -1,0 +1,40 @@
+{
+  "engine": "riichienv",
+  "engine_version": "0.4.11",
+  "game_mode": "YON_IKKYOKU",
+  "rule_preset": "tenhou",
+  "policy_version": "first-legal-v1",
+  "steps": 94,
+  "decisions": 95,
+  "observed_seats": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "scores": [
+    24000,
+    24000,
+    24000,
+    28000
+  ],
+  "ranks": [
+    2,
+    3,
+    4,
+    1
+  ],
+  "event_counts": {
+    "chi": 5,
+    "dahai": 82,
+    "end_game": 1,
+    "end_kyoku": 1,
+    "pon": 7,
+    "ryukyoku": 1,
+    "start_game": 1,
+    "start_kyoku": 1,
+    "tsumo": 70
+  },
+  "trace_sha256": "f305f2bc48af537d55ed987477875c0ffc012678f2bbf4c6f44ac55fa5bce023",
+  "reproducible": true
+}

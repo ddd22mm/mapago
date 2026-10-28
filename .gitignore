@@ -1,0 +1,6 @@
+.venv/
+.tools/
+.research/
+artifacts/
+__pycache__/
+*.pyc

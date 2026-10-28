@@ -28,11 +28,22 @@
     ]
   },
   "technology": {
-    "status": "undecided",
+    "status": "engine-prototype-verified",
+    "stage1": {
+      "engine": "RiichiEnv",
+      "version": "0.4.11",
+      "python": "3.12",
+      "gameMode": "YON_IKKYOKU",
+      "rulePreset": "tenhou",
+      "scope": "local-engine-probe",
+      "researchHelper": "mahjong==2.1.0",
+      "report": "docs/stage-1-engine-review.md",
+      "productRulesFinalized": false,
+      "frontendBackendStorageUndecided": true
+    },
     "candidates": {
       "frontend": ["React"],
       "backend": ["Python", "FastAPI"],
-      "gameEngine": ["RiichiEnv"],
       "rating": ["OpenSkill"]
     },
     "requireOfficialDocsAndLicenseReview": true
