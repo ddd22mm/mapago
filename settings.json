@@ -59,7 +59,7 @@
       "version": "0.4.11",
       "python": "3.12",
       "gameMode": "YON_IKKYOKU",
-      "rulePreset": "tenhou",
+      "rulePreset": "mjsoul",
       "scope": "local-engine-probe",
       "researchHelper": "mahjong==2.1.0",
       "report": "docs/stage-1-engine-review.md",

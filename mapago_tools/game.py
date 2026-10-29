@@ -39,7 +39,7 @@ class HumanInput:
 
 
 class GameSession:
-    def __init__(self, rule="tenhou", policy="random-legal", seed=None):
+    def __init__(self, rule="mjsoul", policy="random-legal", seed=None):
         seed = secrets.randbits(64) if seed is None else seed
         config = make_config(seed=seed, mode="kyoku", rule=rule, names=[policy] * 4)
         self.bots = create_bots(config["bots"])

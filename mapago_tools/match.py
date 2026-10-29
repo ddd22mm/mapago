@@ -69,7 +69,7 @@ def visible_event(event, viewer):
     return result
 
 
-def make_config(seed=42, mode="east", rule="tenhou", names=None, dealer=0):
+def make_config(seed=42, mode="east", rule="mjsoul", names=None, dealer=0):
     config = {
         "seed": seed, "mode": mode, "rule": rule, "dealer": dealer,
         "bots": bot_configs(["random-legal"] * 4 if names is None else names, seed),
@@ -267,7 +267,7 @@ def main():
     run = commands.add_parser("run")
     run.add_argument("--seed", type=int, default=42)
     run.add_argument("--mode", choices=MODES, default="east")
-    run.add_argument("--rule", choices=RULE_PRESETS, default="tenhou")
+    run.add_argument("--rule", choices=RULE_PRESETS, default="mjsoul")
     run.add_argument("--dealer", type=int, choices=range(4), default=0)
     run.add_argument("--bots", default=",".join(["random-legal"] * 4))
     run.add_argument("--max-steps", type=int, default=MAX_STEPS)

@@ -1,0 +1,60 @@
+{
+  "schema": "mapago.policy-evaluation.v1",
+  "engine_version": "0.4.11",
+  "protocol": {
+    "mode": "kyoku",
+    "seed_blocks_per_rule": 16,
+    "seeds": "range(seed_blocks_per_rule)",
+    "dealer": 0,
+    "seat_rotation": "one rule-based seat versus three random-legal seats, all four seats",
+    "control": "same seed, dealer, rule, all random-legal; reuse all four seat results",
+    "policy": "rule-based-v1",
+    "baseline": "random-legal-v1",
+    "replay_verified": true
+  },
+  "limitations": [
+    "Single-hand benchmark, not east-round or hanchan strength or a rating",
+    "Seat samples within a seed block are correlated",
+    "Random-legal can decline legal wins and is an integration baseline",
+    "Deal-ins count ron claims; multiple ron can count multiple claims",
+    "No policy parameters are fitted or updated"
+  ],
+  "results": {
+    "mjsoul": {
+      "mixed_matches": 64,
+      "control_matches": 16,
+      "rule_based": {
+        "seat_samples": 64,
+        "rounds": 64,
+        "mean_midrank": 1.4140625,
+        "mean_score_delta": 4334.375,
+        "win_count": 32,
+        "win_rate": 0.5,
+        "deal_in_claim_count": 0,
+        "deal_in_claims_per_round": 0.0
+      },
+      "matched_random_control": {
+        "seat_samples": 64,
+        "rounds": 64,
+        "mean_midrank": 2.5,
+        "mean_score_delta": 0,
+        "win_count": 1,
+        "win_rate": 0.015625,
+        "deal_in_claim_count": 1,
+        "deal_in_claims_per_round": 0.015625
+      },
+      "random_opponents": {
+        "seat_samples": 192,
+        "rounds": 192,
+        "mean_midrank": 2.8619791666666665,
+        "mean_score_delta": -1512.5,
+        "win_count": 0,
+        "win_rate": 0.0,
+        "deal_in_claim_count": 24,
+        "deal_in_claims_per_round": 0.125
+      },
+      "paired_mean_rank_improvement": 1.0859375,
+      "paired_mean_score_improvement": 4334.375
+    }
+  }
+}

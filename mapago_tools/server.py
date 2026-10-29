@@ -102,7 +102,7 @@ class Handler(BaseHTTPRequestHandler):
                 if self.path == "/api/game":
                     if set(data) - {"rule", "policy"}:
                         raise ValueError("지원하지 않는 대국 설정입니다.")
-                    game = GameSession(data.get("rule", "tenhou"), data.get("policy", "random-legal"))
+                    game = GameSession(data.get("rule", "mjsoul"), data.get("policy", "random-legal"))
                     now = time.monotonic()
                     self.server.sessions = {key: entry for key, entry in self.server.sessions.items()
                                             if now - entry[0] <= 14400}
