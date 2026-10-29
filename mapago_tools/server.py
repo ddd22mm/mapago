@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 import secrets
 import threading
 import time
@@ -18,11 +19,11 @@ COOKIE = "mapago_session"
 
 
 class GameServer(ThreadingHTTPServer):
-    def __init__(self, port=8765):
-        super().__init__(("127.0.0.1", port), Handler)
+    def __init__(self, port=8765, host="127.0.0.1", public_authority=None):
+        super().__init__((host, port), Handler)
         self.sessions = {}
         self.lock = threading.RLock()
-        self.authority = f"127.0.0.1:{self.server_port}"
+        self.authority = public_authority or f"{host}:{self.server_port}"
         self.origin = f"http://{self.authority}"
 
 
@@ -129,8 +130,10 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser(description="마파고 로컬 대국 화면")
     parser.add_argument("--port", type=int, default=8765)
+    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--public-authority", default=os.environ.get("MAPAGO_PUBLIC_AUTHORITY"))
     args = parser.parse_args()
-    with GameServer(args.port) as server:
+    with GameServer(args.port, args.host, args.public_authority) as server:
         print(f"마파고 대국 화면: {server.origin}", flush=True)
         try:
             server.serve_forever()

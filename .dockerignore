@@ -1,0 +1,9 @@
+.git
+.venv
+.tools
+.research
+artifacts
+__pycache__
+*.py[cod]
+*.internal.json
+uv.lock.backup

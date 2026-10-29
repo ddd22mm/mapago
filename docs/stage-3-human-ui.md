@@ -22,13 +22,23 @@ Sites skill의 로컬 개발 경로를 적용했다. 기존 저장소 지침상 
 
 `GameSession`은 HTTP와 무관하게 사용자/봇 진행을 조정한다. 2단계 `MatchEngine`과 기록 형식을 재사용하고 사용자 좌석 정책은 `human` 버전 1로 기록한다. 완료된 내부 기록은 기존 `replay()`로 검증할 수 있다. 공개 API가 시드나 상대 패를 받거나 반환하지 않도록 했다.
 
-## 실행
+## 직접 실행 (개발/분석 보조 경로)
+
+일반 대국 화면은 아래 Docker Compose 경로를 사용한다. 이 직접 실행 명령은 엔진 분석과 로컬 API 디버깅을 위한 보조 경로다.
 
 ```powershell
 .\.tools\uv.exe run --locked python -m mapago_tools.server
 ```
 
 `http://127.0.0.1:8765`에서 시작한다. `--port 8766`처럼 포트를 바꿀 수 있다. 서버는 127.0.0.1에만 바인딩한다. 종료는 Ctrl+C다.
+
+## Docker Compose 실행 환경
+
+환경 의존 실행 문제를 해결하기 위해 Docker Compose를 기본 실행 경로로 추가했다. `python:3.12.15-slim-trixie`, `uv 0.13.6`, `uv.lock`의 고정 의존성으로 이미지를 빌드한다. 개발 도구와 로컬 가상환경은 이미지에 포함하지 않는다. 이 변경은 애플리케이션 의존성/API 구조를 바꾸지 않는다. 직접 Python/uv 실행은 엔진 조사와 테스트용 보조 경로로 유지한다.
+
+검토한 대안은 각 PC에 Python/uv를 따로 설치하는 방법(환경 차이가 재발할 수 있음)과 React/FastAPI/WebSocket 도입(현재 단일 사용자 프로토타입 범위보다 큼)이다. Windows 실행에는 Docker Desktop의 WSL 2 백엔드와 BIOS/UEFI 하드웨어 가상화가 필요하다.
+
+`docker compose up --build -d`로 빌드/시작하고 `docker compose down`으로 종료한다. 포트 8765 충돌 시 `MAPAGO_PORT=8766`으로 바꾼다. 서버는 컨테이너 안에서 `0.0.0.0:8765`에 바인딩하지만, Compose가 호스트의 `127.0.0.1`에만 포트를 게시하며 Host/Origin 검사는 `127.0.0.1:<공개 포트>`와 일치하는 요청만 받는다.
 
 ## API와 세션 경계
 
@@ -56,6 +66,10 @@ Sites skill의 로컬 개발 경로를 적용했다. 기존 저장소 지침상 
 - 홈페이지 HTTP 200과 정적 자산 응답을 확인하고 Node VM으로 `app.js` 구문 검사를 통과했다. Windows 셸 PATH의 Node 설치 없이 제공된 Node 실행 도구로 구문만 검사했다.
 
 요약 결과는 `docs/validation/stage3-game.json`에 기록했다. `verified`는 엔진 기록 재생의 검증이며 `browser_verified`는 false다.
+
+## Docker 런타임 확인
+
+2026-10-29에 Docker Desktop 4.97.0, Engine 29.9.2, Compose v5.6.1에서 빌드 및 기동했다. 컨테이너가 Python 3.12.15와 UID 10001로 실행되고 Compose healthcheck가 healthy임을 확인했다. 호스트 HTTP `GET /`는 200, `POST /api/game`은 201과 세션 쿠키를 반환했다. 브라우저 UI 조작/레이아웃 확인과 이때의 Docker 검증은 별개로 유지한다.
 
 ## 브라우저 확인 제한
 
