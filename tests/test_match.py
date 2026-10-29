@@ -181,6 +181,18 @@ class MatchTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             replay(self.archive, viewer=4)
 
+    def test_rule_based_policy_records_private_rationale_and_replays(self):
+        archive = play(make_config(mode="kyoku", names=["rule-based"] * 4))
+        self.assertEqual(archive["config"]["bots"][0]["version"], "rule-based-v1")
+        decisions = [action["decision"] for step in archive["steps"]
+                     for action in step["actions"] if "decision" in action]
+        self.assertTrue(decisions)
+        self.assertTrue(all("shanten" in item or item["reason"] in
+                            ("legal_win", "conservative_pass") for item in decisions))
+        _, frames = replay(archive, viewer=0)
+        self.assertTrue(frames)
+        self.assertNotIn("decision", str(frames))
+
     def test_response_batches_really_include_multiple_seats(self):
         # First-legal seed 42 produces a simultaneous claim window.
         archive = play(make_config(mode="kyoku", names=["first-legal"] * 4))

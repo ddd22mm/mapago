@@ -352,9 +352,11 @@ function render() {
     }
   }
   $("policy-label").textContent =
-    game.bot_policy === "random-legal"
-      ? "랜덤 합법 행동 봇"
-      : "첫 번째 합법 행동 봇";
+    game.bot_policy === "rule-based"
+      ? "규칙 기반 샹텐·유효패 봇"
+      : game.bot_policy === "random-legal"
+        ? "랜덤 합법 행동 봇"
+        : "첫 번째 합법 행동 봇";
   $("timeline").replaceChildren();
   for (const item of [...game.events].reverse()) {
     const text = eventText(item.event);

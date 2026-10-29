@@ -46,7 +46,7 @@
     "stage2": {
       "entrypoint": "python -m mapago_tools.match",
       "modes": ["kyoku", "east", "hanchan"],
-      "botPolicies": ["first-legal-v1", "random-legal-v1"],
+      "botPolicies": ["first-legal-v1", "random-legal-v1", "rule-based-v1"],
       "storage": "local-json-prototype",
       "internalSchema": "mapago.match.v1",
       "seatReplaySchema": "mapago.seat-replay.v1",

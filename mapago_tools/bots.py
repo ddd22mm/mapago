@@ -2,6 +2,8 @@
 
 import random
 
+from mapago_tools.strategy import POLICY_VERSION, RuleBasedBot
+
 
 class LegalBot:
     def __init__(self, name, seed):
@@ -22,11 +24,16 @@ def bot_configs(names, seed):
         raise ValueError("Exactly four bot policies required")
     configs = []
     for seat, name in enumerate(names):
-        if name not in ("first-legal", "random-legal"):
+        if name not in ("first-legal", "random-legal", "rule-based"):
             raise ValueError("Unknown bot policy")
-        configs.append({"seat": seat, "name": name, "version": "1", "seed": seed ^ (seat + 1)})
+        configs.append({"seat": seat, "name": name,
+                        "version": POLICY_VERSION if name == "rule-based" else "1",
+                        "seed": seed ^ (seat + 1),
+                        **({"settings": {"ranking": ["shanten", "visible_ukeire", "riichi_tenpai", "riichi_safety", "dora", "tile_id"]}}
+                           if name == "rule-based" else {})})
     return configs
 
 
 def create_bots(configs):
-    return [LegalBot(config["name"], config["seed"]) for config in configs]
+    return [RuleBasedBot(config["name"], config["seed"]) if config["name"] == "rule-based"
+            else LegalBot(config["name"], config["seed"]) for config in configs]

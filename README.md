@@ -52,7 +52,7 @@ uv run --locked python -m mapago_tools.match replay artifacts/match-001.internal
 uv run --locked python -m mapago_tools.match replay artifacts/match-001.internal.json --viewer 0 --output artifacts/match-001.seat0.json
 ```
 
-기본값은 독립적인 랜덤 합법 행동 봇 4개와 tenhou 규칙 프리셋입니다. `--mode kyoku|east|hanchan`, `--rule tenhou|mjsoul`, `--dealer 0..3`으로 설정합니다. `--bots first-legal,random-legal,first-legal,random-legal`처럼 좌석별 정책을 지정할 수 있습니다. 이 정책들은 연동 검증용이며 실력이 측정된 AI가 아닙니다.
+기본값은 독립적인 랜덤 합법 행동 봇 4개와 tenhou 규칙 프리셋입니다. `--mode kyoku|east|hanchan`, `--rule tenhou|mjsoul`, `--dealer 0..3`으로 설정합니다. `--bots rule-based,random-legal,first-legal,random-legal`처럼 좌석별 정책을 지정할 수 있습니다. `rule-based-v1`은 엔진의 샹텐 계산과 공개 정보 기반 유효패 휴리스틱으로 타패를 고르는 초기 정책이며, 호출은 보수적으로 패스합니다. 성능이나 레이팅은 측정된 바 없습니다.
 
 재생은 봇을 다시 실행하지 않고 **파일에 저장한 행동**을 엔진의 합법 행동 목록과 대조해 적용합니다. 각 단계의 상태·이벤트, 최종 점수·순위까지 검증하며 불일치·손상·버전 차이는 실패 처리합니다. 기존 파일을 덮어쓰지 않으므로 재실행 시 다른 출력 이름을 지정하세요.
 

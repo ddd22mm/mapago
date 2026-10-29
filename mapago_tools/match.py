@@ -152,7 +152,11 @@ class MatchEngine:
             if type(index) is not int or index not in range(len(legal)):
                 raise ValueError("Bot selected an illegal action index")
             self.bot_cursors[seat] = len(self.env.mjai_log)
-            batch.append({"seat": seat, "action": legal[index].to_dict()})
+            item = {"seat": seat, "action": legal[index].to_dict()}
+            decision = getattr(bots[seat], "last_decision", None)
+            if decision is not None:
+                item["decision"] = copy.deepcopy(decision)
+            batch.append(item)
         return batch
 
     def apply(self, batch):
