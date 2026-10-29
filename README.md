@@ -58,6 +58,14 @@ uv run --locked python -m mapago_tools.match replay artifacts/match-001.internal
 
 `*.internal.json`에는 재현용 시드와 행동 기록이 있어 외부 공개하면 안 됩니다. 해당 파일과 `artifacts/`는 Git에서 제외됩니다. `--viewer` 출력은 선택 좌석의 손패·합법 행동과, 상대 손패·쯔모를 가린 이벤트를 포함한 JSON 복기 프레임입니다. 브라우저 복기 화면은 후속 단계에서 연결합니다.
 
+## 학습형 AI 검토 후보
+
+- [cai_Akagi의 4인 Mortal](https://github.com/caizizhen/cai_Akagi/tree/main/mjai_bot/mortal)을 후속 검토 후보로 기록합니다. 현재 채택하거나 설치한 의존성은 아닙니다.
+- Git LFS 포인터 기준 모델 크기는 130,797,985바이트(약 131MB)이며, 원본 경로의 16바이트 범위 요청만 확인했습니다. 전체 가중치 다운로드·추론·성능 검증은 하지 않았습니다.
+- PyTorch 기반 ResNet·DQN과 MJAI JSONL 입출력 구조를 제공합니다. 연결 시 `mjai_bot/common/policy_guard.py` 의존성, 좌석별 정보 필터링, RiichiEnv 합법 행동과의 대조를 검토해야 합니다.
+- README의 작성(雀聖) 수준·학습량 설명은 제작자 주장입니다. Mortal 하위 폴더의 AGPL-3.0과 가중치 이용 조건, 학습 데이터 출처는 도입 전에 확인해야 합니다.
+- [상세 조사 기록(Notion)](https://app.notion.com/p/4080404e433381d8bc38ccaa347bd243)
+
 ## 결과와 다음 단계
 
 - [1단계 조사 기록](docs/stage-1-engine-review.md): 후보 비교, 설치, API, 규칙, 라이선스와 미해결 항목
