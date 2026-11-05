@@ -1,5 +1,6 @@
 """Lightweight, legal-action-constrained Mahjong Soul imitation policy."""
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -9,6 +10,7 @@ from mapago_tools.strategy import RED_TILES, tile_type
 
 POLICY_VERSION = "mjsoul-imitation-v1"
 TENHOU_POLICY_VERSION = "tenhou-imitation-v1"
+MIXED_POLICY_VERSION = "tenhou-mjsoul-mix-80-20-v1"
 FEATURES = (
     "bias", "own_copies", "left_2", "left_1", "right_1", "right_2",
     "visible_copies", "dora", "red_five", "safe_tier",
@@ -152,6 +154,36 @@ class ImitationBot:
             reason = "learned_discard_ranking"
         self.last_decision = {"policy": self.policy, "reason": reason}
         return selected
+
+
+class MixedImitationBot:
+    """Blend source-specific linear rankers while keeping the same legal-action interface."""
+
+    def __init__(self, tenhou_model_path=TENHOU_MODEL_PATH, mjsoul_model_path=MODEL_PATH,
+                 tenhou_weight=0.8):
+        if not 0.0 <= tenhou_weight <= 1.0:
+            raise ValueError("tenhou_weight must be between 0 and 1")
+        if tenhou_weight != 0.8:
+            raise ValueError("This checkpoint identity is fixed to an 80/20 Tenhou/Mahjong Soul blend")
+        tenhou = ImitationBot(tenhou_model_path)
+        mjsoul = ImitationBot(mjsoul_model_path)
+        if tenhou.name != TENHOU_POLICY_VERSION or mjsoul.name != POLICY_VERSION:
+            raise ValueError("Mixed policy requires one Tenhou and one Mahjong Soul checkpoint")
+        soul_weight = 1.0 - tenhou_weight
+        self.weights = [[tenhou_weight * tenhou.weights[kind][feature]
+                         + soul_weight * mjsoul.weights[kind][feature]
+                         for feature in range(len(FEATURES))]
+                        for kind in range(34)]
+        self.policy = MIXED_POLICY_VERSION
+        self.name = MIXED_POLICY_VERSION
+        self.last_decision = None
+        serialized = json.dumps({"policy": self.policy, "features": list(FEATURES),
+                                 "weights": self.weights}, sort_keys=True,
+                                separators=(",", ":")).encode("utf-8")
+        self.model_sha256 = hashlib.sha256(serialized).hexdigest()
+
+    def choose(self, observation, legal_actions):
+        return ImitationBot.choose(self, observation, legal_actions)
 
 
 def evaluate_decision(observation, legal_actions, expert_action, weights):

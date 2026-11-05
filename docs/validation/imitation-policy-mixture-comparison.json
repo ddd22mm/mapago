@@ -1,0 +1,461 @@
+{
+  "schema": "mapago.imitation-mixture-comparison.v1",
+  "engine_version": "0.4.11",
+  "protocol": {
+    "mode": "hanchan",
+    "rule": "mjsoul",
+    "seed_blocks": 16,
+    "seeds": "20261105..20261120",
+    "seat_rotation": "each policy played each seat against three rule-based-v1 bots per seed",
+    "paired_conditions": "all policies use the same rule, seeds, seats, and baseline policy",
+    "replay_verified": true,
+    "mixture": {
+      "weights": {
+        "tenhou": 0.8,
+        "mjsoul": 0.2
+      },
+      "method": "linear blend of source-specific ranker weights",
+      "model_sha256_scope": "canonical JSON of mixture policy id, features, and blended weights"
+    },
+    "model_sha256": {
+      "tenhou": "b5b7476f580e26067a97871a751b69c39e4faed659e89aba74d94d533756f2b6",
+      "mjsoul": "d23504759dd8af876d68b06c2d7e52ef475af34a9bae1d29f350bc9946e46067",
+      "mixed_80_20": "2898eddc086f992b2a802dfd9c13d014850679cbdd1d29a8a5b4fd190a463498"
+    },
+    "baseline": "rule-based-v1"
+  },
+  "policies": {
+    "tenhou": {
+      "policy": "tenhou-imitation-v1",
+      "matches": 64,
+      "model_sha256": "b5b7476f580e26067a97871a751b69c39e4faed659e89aba74d94d533756f2b6",
+      "model": {
+        "seat_samples": 64,
+        "rounds": 636,
+        "mean_midrank": 3.5625,
+        "mean_score_delta": -21785.9375,
+        "win_count": 11,
+        "win_rate": 0.01729559748427673,
+        "deal_in_claim_count": 118,
+        "deal_in_claims_per_round": 0.18553459119496854
+      },
+      "baseline_opponents": {
+        "seat_samples": 192,
+        "rounds": 1908,
+        "mean_midrank": 2.1458333333333335,
+        "mean_score_delta": 7261.979166666667,
+        "win_count": 449,
+        "win_rate": 0.23532494758909853,
+        "deal_in_claim_count": 249,
+        "deal_in_claims_per_round": 0.13050314465408805
+      },
+      "paired_mean_rank_improvement": -1.4166666666666665,
+      "paired_mean_score_improvement": -29047.916666666668,
+      "paired_seed_blocks": [
+        {
+          "seed": 20261105,
+          "model_mean_rank": 3.25,
+          "baseline_mean_rank": 2.25,
+          "model_mean_score_delta": -10950,
+          "baseline_mean_score_delta": 3650
+        },
+        {
+          "seed": 20261106,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -16275,
+          "baseline_mean_score_delta": 5425
+        },
+        {
+          "seed": 20261107,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -19150,
+          "baseline_mean_score_delta": 6383.333333333333
+        },
+        {
+          "seed": 20261108,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -19575,
+          "baseline_mean_score_delta": 6525
+        },
+        {
+          "seed": 20261109,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -21725,
+          "baseline_mean_score_delta": 7241.666666666667
+        },
+        {
+          "seed": 20261110,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -20975,
+          "baseline_mean_score_delta": 6991.666666666667
+        },
+        {
+          "seed": 20261111,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -20825,
+          "baseline_mean_score_delta": 6941.666666666667
+        },
+        {
+          "seed": 20261112,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -24225,
+          "baseline_mean_score_delta": 8075
+        },
+        {
+          "seed": 20261113,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -24275,
+          "baseline_mean_score_delta": 8091.666666666667
+        },
+        {
+          "seed": 20261114,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -28650,
+          "baseline_mean_score_delta": 9550
+        },
+        {
+          "seed": 20261115,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -21175,
+          "baseline_mean_score_delta": 7058.333333333333
+        },
+        {
+          "seed": 20261116,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -28650,
+          "baseline_mean_score_delta": 9550
+        },
+        {
+          "seed": 20261117,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -23825,
+          "baseline_mean_score_delta": 7941.666666666667
+        },
+        {
+          "seed": 20261118,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -22775,
+          "baseline_mean_score_delta": 7591.666666666667
+        },
+        {
+          "seed": 20261119,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -20775,
+          "baseline_mean_score_delta": 6925
+        },
+        {
+          "seed": 20261120,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -24750,
+          "baseline_mean_score_delta": 8250
+        }
+      ]
+    },
+    "mjsoul": {
+      "policy": "mjsoul-imitation-v1",
+      "matches": 64,
+      "model_sha256": "d23504759dd8af876d68b06c2d7e52ef475af34a9bae1d29f350bc9946e46067",
+      "model": {
+        "seat_samples": 64,
+        "rounds": 635,
+        "mean_midrank": 3.421875,
+        "mean_score_delta": -16757.8125,
+        "win_count": 16,
+        "win_rate": 0.025196850393700787,
+        "deal_in_claim_count": 103,
+        "deal_in_claims_per_round": 0.16220472440944883
+      },
+      "baseline_opponents": {
+        "seat_samples": 192,
+        "rounds": 1905,
+        "mean_midrank": 2.1927083333333335,
+        "mean_score_delta": 5585.9375,
+        "win_count": 441,
+        "win_rate": 0.231496062992126,
+        "deal_in_claim_count": 269,
+        "deal_in_claims_per_round": 0.14120734908136484
+      },
+      "paired_mean_rank_improvement": -1.2291666666666667,
+      "paired_mean_score_improvement": -22343.75,
+      "paired_seed_blocks": [
+        {
+          "seed": 20261105,
+          "model_mean_rank": 2.25,
+          "baseline_mean_rank": 2.5833333333333335,
+          "model_mean_score_delta": 3775,
+          "baseline_mean_score_delta": -1258.3333333333333
+        },
+        {
+          "seed": 20261106,
+          "model_mean_rank": 2.0,
+          "baseline_mean_rank": 2.6666666666666665,
+          "model_mean_score_delta": -3800,
+          "baseline_mean_score_delta": 1266.6666666666667
+        },
+        {
+          "seed": 20261107,
+          "model_mean_rank": 2.75,
+          "baseline_mean_rank": 2.4166666666666665,
+          "model_mean_score_delta": -11575,
+          "baseline_mean_score_delta": 3858.3333333333335
+        },
+        {
+          "seed": 20261108,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -13775,
+          "baseline_mean_score_delta": 4591.666666666667
+        },
+        {
+          "seed": 20261109,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -14625,
+          "baseline_mean_score_delta": 4875
+        },
+        {
+          "seed": 20261110,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -16500,
+          "baseline_mean_score_delta": 5500
+        },
+        {
+          "seed": 20261111,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -20850,
+          "baseline_mean_score_delta": 6950
+        },
+        {
+          "seed": 20261112,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -26225,
+          "baseline_mean_score_delta": 8741.666666666666
+        },
+        {
+          "seed": 20261113,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -21950,
+          "baseline_mean_score_delta": 7316.666666666667
+        },
+        {
+          "seed": 20261114,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -26150,
+          "baseline_mean_score_delta": 8716.666666666666
+        },
+        {
+          "seed": 20261115,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -16650,
+          "baseline_mean_score_delta": 5550
+        },
+        {
+          "seed": 20261116,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -17300,
+          "baseline_mean_score_delta": 5766.666666666667
+        },
+        {
+          "seed": 20261117,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -20475,
+          "baseline_mean_score_delta": 6825
+        },
+        {
+          "seed": 20261118,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -20150,
+          "baseline_mean_score_delta": 6716.666666666667
+        },
+        {
+          "seed": 20261119,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -21000,
+          "baseline_mean_score_delta": 7000
+        },
+        {
+          "seed": 20261120,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -20875,
+          "baseline_mean_score_delta": 6958.333333333333
+        }
+      ]
+    },
+    "mixed_80_20": {
+      "policy": "tenhou-mjsoul-mix-80-20-v1",
+      "matches": 64,
+      "model_sha256": "2898eddc086f992b2a802dfd9c13d014850679cbdd1d29a8a5b4fd190a463498",
+      "model": {
+        "seat_samples": 64,
+        "rounds": 606,
+        "mean_midrank": 3.53125,
+        "mean_score_delta": -18114.0625,
+        "win_count": 7,
+        "win_rate": 0.01155115511551155,
+        "deal_in_claim_count": 86,
+        "deal_in_claims_per_round": 0.1419141914191419
+      },
+      "baseline_opponents": {
+        "seat_samples": 192,
+        "rounds": 1818,
+        "mean_midrank": 2.15625,
+        "mean_score_delta": 6038.020833333333,
+        "win_count": 430,
+        "win_rate": 0.23652365236523654,
+        "deal_in_claim_count": 254,
+        "deal_in_claims_per_round": 0.1397139713971397
+      },
+      "paired_mean_rank_improvement": -1.375,
+      "paired_mean_score_improvement": -24152.083333333332,
+      "paired_seed_blocks": [
+        {
+          "seed": 20261105,
+          "model_mean_rank": 3.25,
+          "baseline_mean_rank": 2.25,
+          "model_mean_score_delta": -9950,
+          "baseline_mean_score_delta": 3316.6666666666665
+        },
+        {
+          "seed": 20261106,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -10450,
+          "baseline_mean_score_delta": 3483.3333333333335
+        },
+        {
+          "seed": 20261107,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -13075,
+          "baseline_mean_score_delta": 4358.333333333333
+        },
+        {
+          "seed": 20261108,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -13500,
+          "baseline_mean_score_delta": 4500
+        },
+        {
+          "seed": 20261109,
+          "model_mean_rank": 3.0,
+          "baseline_mean_rank": 2.3333333333333335,
+          "model_mean_score_delta": -16500,
+          "baseline_mean_score_delta": 5500
+        },
+        {
+          "seed": 20261110,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -15750,
+          "baseline_mean_score_delta": 5250
+        },
+        {
+          "seed": 20261111,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -15600,
+          "baseline_mean_score_delta": 5200
+        },
+        {
+          "seed": 20261112,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -24225,
+          "baseline_mean_score_delta": 8075
+        },
+        {
+          "seed": 20261113,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -20100,
+          "baseline_mean_score_delta": 6700
+        },
+        {
+          "seed": 20261114,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -24550,
+          "baseline_mean_score_delta": 8183.333333333333
+        },
+        {
+          "seed": 20261115,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -17150,
+          "baseline_mean_score_delta": 5716.666666666667
+        },
+        {
+          "seed": 20261116,
+          "model_mean_rank": 4.0,
+          "baseline_mean_rank": 2.0,
+          "model_mean_score_delta": -24700,
+          "baseline_mean_score_delta": 8233.333333333334
+        },
+        {
+          "seed": 20261117,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -21875,
+          "baseline_mean_score_delta": 7291.666666666667
+        },
+        {
+          "seed": 20261118,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -21550,
+          "baseline_mean_score_delta": 7183.333333333333
+        },
+        {
+          "seed": 20261119,
+          "model_mean_rank": 3.75,
+          "baseline_mean_rank": 2.0833333333333335,
+          "model_mean_score_delta": -20300,
+          "baseline_mean_score_delta": 6766.666666666667
+        },
+        {
+          "seed": 20261120,
+          "model_mean_rank": 3.5,
+          "baseline_mean_rank": 2.1666666666666665,
+          "model_mean_score_delta": -20550,
+          "baseline_mean_score_delta": 6850
+        }
+      ]
+    }
+  },
+  "data_rights": "Both dataset cards label rights as other. Tenhou upstream grants no CC BY rights over logs; Mahjong Soul rights remain unresolved. All checkpoints remain local.",
+  "limitations": [
+    "Exploratory finite-sample hanchan benchmark; not a rating",
+    "Baseline rows share matches with focal policies and are correlated",
+    "Action imitation agreement is not playing strength",
+    "The 80/20 blend is a fixed experimental choice, not an optimized ratio",
+    "Mahjong Soul training sample had high Jade shard replay rejection; see its replay audit",
+    "Source data rights are unresolved; checkpoints are not redistributed"
+  ]
+}
