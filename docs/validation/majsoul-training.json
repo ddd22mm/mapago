@@ -1,0 +1,202 @@
+{
+  "schema": "mapago.mjsoul-training.v1",
+  "policy": "mjsoul-imitation-v1",
+  "dataset": {
+    "source": "nikketryhard/tenhou-houou-mjai (Mahjong Soul shards only)",
+    "source_url": "https://huggingface.co/datasets/nikketryhard/tenhou-houou-mjai",
+    "license_label": "other",
+    "source_data_rights": "not granted by the dataset card; upstream terms must be checked",
+    "train_archives": [
+      {
+        "shard": "majsoul-jade-2019.tar",
+        "games_seen": 13581,
+        "games_sampled": 120,
+        "bytes": 96000000
+      },
+      {
+        "shard": "majsoul-throne-2019.tar",
+        "games_seen": 7603,
+        "games_sampled": 120,
+        "bytes": 54620160
+      },
+      {
+        "shard": "majsoul-jade-2020.tar",
+        "games_seen": 55749,
+        "games_sampled": 120,
+        "bytes": 391813120
+      },
+      {
+        "shard": "majsoul-throne-2020.tar",
+        "games_seen": 20916,
+        "games_sampled": 120,
+        "bytes": 150097920
+      },
+      {
+        "shard": "majsoul-jade-2021.tar",
+        "games_seen": 152801,
+        "games_sampled": 120,
+        "bytes": 1060290560
+      },
+      {
+        "shard": "majsoul-throne-2021.tar",
+        "games_seen": 40805,
+        "games_sampled": 120,
+        "bytes": 293683200
+      },
+      {
+        "shard": "majsoul-jade-2022.tar",
+        "games_seen": 426892,
+        "games_sampled": 120,
+        "bytes": 2954997760
+      },
+      {
+        "shard": "majsoul-throne-2022.tar",
+        "games_seen": 158644,
+        "games_sampled": 120,
+        "bytes": 1139773440
+      },
+      {
+        "shard": "majsoul-jade-2023.tar",
+        "games_seen": 728090,
+        "games_sampled": 120,
+        "bytes": 5136517120
+      },
+      {
+        "shard": "majsoul-throne-2023.tar",
+        "games_seen": 243752,
+        "games_sampled": 120,
+        "bytes": 1777274880
+      },
+      {
+        "shard": "majsoul-jade-2024.tar",
+        "games_seen": 933050,
+        "games_sampled": 120,
+        "bytes": 6637342720
+      },
+      {
+        "shard": "majsoul-throne-2024.tar",
+        "games_seen": 288341,
+        "games_sampled": 120,
+        "bytes": 2116392960
+      }
+    ],
+    "validation_archives": [
+      {
+        "shard": "majsoul-jade-2025.tar",
+        "games_seen": 934144,
+        "games_sampled": 120,
+        "bytes": 6633420800
+      },
+      {
+        "shard": "majsoul-throne-2025.tar",
+        "games_seen": 184424,
+        "games_sampled": 120,
+        "bytes": 1530920960
+      }
+    ],
+    "test_archives": [
+      {
+        "shard": "majsoul-jade-2026.tar",
+        "games_seen": 86222,
+        "games_sampled": 120,
+        "bytes": 611983360
+      },
+      {
+        "shard": "majsoul-throne-2026.tar",
+        "games_seen": 23182,
+        "games_sampled": 120,
+        "bytes": 170055680
+      }
+    ]
+  },
+  "protocol": {
+    "rule": "mjsoul",
+    "train_years": "2019-2024",
+    "validation_years": [
+      2025
+    ],
+    "test_years": [
+      2026
+    ],
+    "sampling": "uniform reservoir sample per Jade/Throne yearly TAR",
+    "max_games_per_shard": 120,
+    "input": "RiichiEnv MjaiReplay acting-seat observation; no opponent hands or future draws",
+    "target": "human discard among legal discard actions",
+    "training": "linear tile-conditioned softmax ranker, online cross-entropy SGD",
+    "epochs": 4,
+    "seed": 20261105
+  },
+  "training_epochs": [
+    {
+      "games_seen": 1440,
+      "games_replayed": 1096,
+      "games_rejected": 344,
+      "discard_decisions": 518702,
+      "expert_action_top1_accuracy": 0.43609625565353516,
+      "validation": {
+        "games_seen": 240,
+        "games_replayed": 173,
+        "games_rejected": 67,
+        "discard_decisions": 83475,
+        "expert_action_top1_accuracy": 0.4523150643905361
+      }
+    },
+    {
+      "games_seen": 1440,
+      "games_replayed": 1096,
+      "games_rejected": 344,
+      "discard_decisions": 518702,
+      "expert_action_top1_accuracy": 0.4518008413308605,
+      "validation": {
+        "games_seen": 240,
+        "games_replayed": 173,
+        "games_rejected": 67,
+        "discard_decisions": 83475,
+        "expert_action_top1_accuracy": 0.4560407307577119
+      }
+    },
+    {
+      "games_seen": 1440,
+      "games_replayed": 1096,
+      "games_rejected": 344,
+      "discard_decisions": 518702,
+      "expert_action_top1_accuracy": 0.4517545719893118,
+      "validation": {
+        "games_seen": 240,
+        "games_replayed": 173,
+        "games_rejected": 67,
+        "discard_decisions": 83475,
+        "expert_action_top1_accuracy": 0.44324648098233005
+      }
+    },
+    {
+      "games_seen": 1440,
+      "games_replayed": 1096,
+      "games_rejected": 344,
+      "discard_decisions": 518702,
+      "expert_action_top1_accuracy": 0.4518991636816515,
+      "validation": {
+        "games_seen": 240,
+        "games_replayed": 173,
+        "games_rejected": 67,
+        "discard_decisions": 83475,
+        "expert_action_top1_accuracy": 0.459958071278826
+      }
+    }
+  ],
+  "heldout_2026": {
+    "games_seen": 240,
+    "games_replayed": 156,
+    "games_rejected": 84,
+    "discard_decisions": 73017,
+    "expert_action_top1_accuracy": 0.4624813399619267
+  },
+  "model_path": ".research/models/mjsoul-imitation-v1.json",
+  "duration_seconds": 747.3,
+  "limitations": [
+    "Action agreement measures imitation, not optimal play or playing strength",
+    "Only discard choices are learned; legal wins remain automatic and calls remain conservative passes",
+    "Source dataset license is other and upstream rights remain unresolved; model/data are not cleared for redistribution"
+  ],
+  "model_sha256": "d23504759dd8af876d68b06c2d7e52ef475af34a9bae1d29f350bc9946e46067"
+}

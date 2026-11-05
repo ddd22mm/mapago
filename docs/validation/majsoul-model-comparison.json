@@ -1,0 +1,45 @@
+{
+  "schema": "mapago.mjsoul-comparison.v1",
+  "engine_version": "0.4.11",
+  "protocol": {
+    "mode": "hanchan",
+    "rule": "mjsoul",
+    "seed_blocks": 16,
+    "seeds": "20261105..20261120",
+    "seat_rotation": "one learned policy against three rule-based-v1 bots, each seat per seed",
+    "replay_verified": true,
+    "model": "mjsoul-imitation-v1",
+    "baseline": "rule-based-v1"
+  },
+  "matches": 64,
+  "model": {
+    "seat_samples": 64,
+    "rounds": 635,
+    "mean_midrank": 3.421875,
+    "mean_score_delta": -16757.8125,
+    "win_count": 16,
+    "win_rate": 0.025196850393700787,
+    "deal_in_claim_count": 103,
+    "deal_in_claims_per_round": 0.16220472440944883
+  },
+  "baseline_opponents": {
+    "seat_samples": 192,
+    "rounds": 1905,
+    "mean_midrank": 2.1927083333333335,
+    "mean_score_delta": 5585.9375,
+    "win_count": 441,
+    "win_rate": 0.231496062992126,
+    "deal_in_claim_count": 269,
+    "deal_in_claims_per_round": 0.14120734908136484
+  },
+  "paired_mean_rank_improvement": -1.2291666666666667,
+  "paired_mean_score_improvement": -22343.75,
+  "limitations": [
+    "Exploratory finite-sample hanchan benchmark; not a rating",
+    "Baseline rows are opponents from the same mixed matches, so outcomes are correlated",
+    "Model imitates Jade/Throne discard choices; action agreement and playing strength differ",
+    "No policy tuning on benchmark seeds"
+  ],
+  "model_sha256": "d23504759dd8af876d68b06c2d7e52ef475af34a9bae1d29f350bc9946e46067",
+  "data_rights": "Dataset card license is other; source rights remain unresolved; checkpoint not redistributed"
+}

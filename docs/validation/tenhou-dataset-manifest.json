@@ -1,0 +1,135 @@
+{
+  "dataset": "nikketryhard/tenhou-houou-mjai",
+  "revision": "6450bb584cef43ede3b514df48e301a832c6818b",
+  "files": [
+    {
+      "file": "tenhou-houou-2009.tar",
+      "bytes": 49879040,
+      "expected_bytes": 49879040,
+      "hub_lfs_sha256": "b77650e9fd6802aff2c7f6c40a8b0d09d449bc9190b8b2dbb05dc6bf0ff916d2",
+      "local_sha256": "b77650e9fd6802aff2c7f6c40a8b0d09d449bc9190b8b2dbb05dc6bf0ff916d2"
+    },
+    {
+      "file": "tenhou-houou-2010.tar",
+      "bytes": 507463680,
+      "expected_bytes": 507463680,
+      "hub_lfs_sha256": "67b594f1c7b156919a8fa87607ec84d041437f074ce9bdd6984f3180349782fc",
+      "local_sha256": "67b594f1c7b156919a8fa87607ec84d041437f074ce9bdd6984f3180349782fc"
+    },
+    {
+      "file": "tenhou-houou-2011.tar",
+      "bytes": 732088320,
+      "expected_bytes": 732088320,
+      "hub_lfs_sha256": "cabf66aa32042105cc8fd1ddfc4c9edbdbcc92710c753bf9712b3d8751e32d3b",
+      "local_sha256": "cabf66aa32042105cc8fd1ddfc4c9edbdbcc92710c753bf9712b3d8751e32d3b"
+    },
+    {
+      "file": "tenhou-houou-2012.tar",
+      "bytes": 848916480,
+      "expected_bytes": 848916480,
+      "hub_lfs_sha256": "569d95fe2b899c5664360e06fdc70c024aff3127581486dd00ee1e25e4fcbd24",
+      "local_sha256": "569d95fe2b899c5664360e06fdc70c024aff3127581486dd00ee1e25e4fcbd24"
+    },
+    {
+      "file": "tenhou-houou-2013.tar",
+      "bytes": 955852800,
+      "expected_bytes": 955852800,
+      "hub_lfs_sha256": "63412d10d051c3662692685ddf986ddb43501fc74eac12ac58cf17e1a3899c67",
+      "local_sha256": "63412d10d051c3662692685ddf986ddb43501fc74eac12ac58cf17e1a3899c67"
+    },
+    {
+      "file": "tenhou-houou-2014.tar",
+      "bytes": 1021880320,
+      "expected_bytes": 1021880320,
+      "hub_lfs_sha256": "6f98f6260ff4449f5fd6e4a248106756ddcf9568f97cd1df9b53a1268fd4fcfc",
+      "local_sha256": "6f98f6260ff4449f5fd6e4a248106756ddcf9568f97cd1df9b53a1268fd4fcfc"
+    },
+    {
+      "file": "tenhou-houou-2015.tar",
+      "bytes": 1100236800,
+      "expected_bytes": 1100236800,
+      "hub_lfs_sha256": "a1e4e63b5fe6a76d66d34ecc1f79b260026a44e1568c25b5355c50029c177448",
+      "local_sha256": "a1e4e63b5fe6a76d66d34ecc1f79b260026a44e1568c25b5355c50029c177448"
+    },
+    {
+      "file": "tenhou-houou-2016.tar",
+      "bytes": 1151692800,
+      "expected_bytes": 1151692800,
+      "hub_lfs_sha256": "55a01c8ee20ce79fd31aaec4189de7c6024b7ca87b06fae78d63eac0a04a1e0a",
+      "local_sha256": "55a01c8ee20ce79fd31aaec4189de7c6024b7ca87b06fae78d63eac0a04a1e0a"
+    },
+    {
+      "file": "tenhou-houou-2017.tar",
+      "bytes": 1221283840,
+      "expected_bytes": 1221283840,
+      "hub_lfs_sha256": "1d1ebc776a8e2dfc139fabcd69f984684b0ecef30f9438ff95d0e1bd1cb72fcc",
+      "local_sha256": "1d1ebc776a8e2dfc139fabcd69f984684b0ecef30f9438ff95d0e1bd1cb72fcc"
+    },
+    {
+      "file": "tenhou-houou-2018.tar",
+      "bytes": 1249884160,
+      "expected_bytes": 1249884160,
+      "hub_lfs_sha256": "d54818444e374dd3c1ccfc2cdae3bce6209322115d34dcda92b8ed02797a23dc",
+      "local_sha256": "d54818444e374dd3c1ccfc2cdae3bce6209322115d34dcda92b8ed02797a23dc"
+    },
+    {
+      "file": "tenhou-houou-2019.tar",
+      "bytes": 1234483200,
+      "expected_bytes": 1234483200,
+      "hub_lfs_sha256": "15f6c9a73236782f0ff3a56d0be7a8133b6d75d865dc84014ccc5ffdf5f0ccd3",
+      "local_sha256": "15f6c9a73236782f0ff3a56d0be7a8133b6d75d865dc84014ccc5ffdf5f0ccd3"
+    },
+    {
+      "file": "tenhou-houou-2020.tar",
+      "bytes": 1576089600,
+      "expected_bytes": 1576089600,
+      "hub_lfs_sha256": "6f535b5c4fec2073475c0f4dc914caec9c8fed15c4024ece92aa2fc6358be600",
+      "local_sha256": "6f535b5c4fec2073475c0f4dc914caec9c8fed15c4024ece92aa2fc6358be600"
+    },
+    {
+      "file": "tenhou-houou-2021.tar",
+      "bytes": 1349294080,
+      "expected_bytes": 1349294080,
+      "hub_lfs_sha256": "ce348c6c52181ad744ece8a6de63ea3b6ed7770847cc5796befa4dc18f850209",
+      "local_sha256": "ce348c6c52181ad744ece8a6de63ea3b6ed7770847cc5796befa4dc18f850209"
+    },
+    {
+      "file": "tenhou-houou-2022.tar",
+      "bytes": 1206097920,
+      "expected_bytes": 1206097920,
+      "hub_lfs_sha256": "d3c81d184bc71af45759eea71f42dc9f976f74f813763ab645ae324260981d26",
+      "local_sha256": "d3c81d184bc71af45759eea71f42dc9f976f74f813763ab645ae324260981d26"
+    },
+    {
+      "file": "tenhou-houou-2023.tar",
+      "bytes": 1210910720,
+      "expected_bytes": 1210910720,
+      "hub_lfs_sha256": "80640c64257cf84ba862145ce5f2bac026ec93b21ba94d9b17248759f3031920",
+      "local_sha256": "80640c64257cf84ba862145ce5f2bac026ec93b21ba94d9b17248759f3031920"
+    },
+    {
+      "file": "tenhou-houou-2024.tar",
+      "bytes": 1318901760,
+      "expected_bytes": 1318901760,
+      "hub_lfs_sha256": "9fdf13c478d7a3216fa44a634affde3f76c4d16ddd2c9f82c63638141db95641",
+      "local_sha256": "9fdf13c478d7a3216fa44a634affde3f76c4d16ddd2c9f82c63638141db95641"
+    },
+    {
+      "file": "tenhou-houou-2025.tar",
+      "bytes": 1279897600,
+      "expected_bytes": 1279897600,
+      "hub_lfs_sha256": "da8dfd79b11e3e34bc8fc0e5cf6f0e619b50f16efeab942e3b653e48d5520126",
+      "local_sha256": "da8dfd79b11e3e34bc8fc0e5cf6f0e619b50f16efeab942e3b653e48d5520126"
+    },
+    {
+      "file": "tenhou-houou-2026.tar",
+      "bytes": 87377920,
+      "expected_bytes": 87377920,
+      "hub_lfs_sha256": "2780e5747f23afbec04f2cabfb31581ed85cfd2e3a31acba91dff5bad1335893",
+      "local_sha256": "2780e5747f23afbec04f2cabfb31581ed85cfd2e3a31acba91dff5bad1335893"
+    }
+  ],
+  "bytes_total": 18102231040,
+  "all_size_verified": true,
+  "all_sha256_verified": true
+}

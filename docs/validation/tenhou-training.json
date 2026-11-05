@@ -1,0 +1,375 @@
+{
+  "schema": "mapago.tenhou-training.v1",
+  "policy": "tenhou-imitation-v1",
+  "dataset": {
+    "source": "nikketryhard/tenhou-houou-mjai",
+    "source_url": "https://huggingface.co/datasets/nikketryhard/tenhou-houou-mjai",
+    "license_label": "other",
+    "source_data_rights": "dataset card labels other; upstream repository grants no CC BY rights over Tenhou logs; original rights remain with Tenhou/C-EGG and upstream terms must be confirmed",
+    "train_archives": [
+      {
+        "shard": "tenhou-houou-2019.tar",
+        "games_seen": 171628,
+        "games_sampled": 120,
+        "bytes": 1234483200
+      },
+      {
+        "shard": "tenhou-houou-2020.tar",
+        "games_seen": 218816,
+        "games_sampled": 120,
+        "bytes": 1576089600
+      },
+      {
+        "shard": "tenhou-houou-2021.tar",
+        "games_seen": 187313,
+        "games_sampled": 120,
+        "bytes": 1349294080
+      },
+      {
+        "shard": "tenhou-houou-2022.tar",
+        "games_seen": 167627,
+        "games_sampled": 120,
+        "bytes": 1206097920
+      },
+      {
+        "shard": "tenhou-houou-2023.tar",
+        "games_seen": 168777,
+        "games_sampled": 120,
+        "bytes": 1210910720
+      },
+      {
+        "shard": "tenhou-houou-2024.tar",
+        "games_seen": 184424,
+        "games_sampled": 120,
+        "bytes": 1318901760
+      }
+    ],
+    "validation_archives": [
+      {
+        "shard": "tenhou-houou-2025.tar",
+        "games_seen": 178897,
+        "games_sampled": 120,
+        "bytes": 1279897600
+      }
+    ],
+    "test_archives": [
+      {
+        "shard": "tenhou-houou-2026.tar",
+        "games_seen": 12188,
+        "games_sampled": 120,
+        "bytes": 87377920
+      }
+    ]
+  },
+  "protocol": {
+    "rule": "tenhou",
+    "train_years": "2019-2024",
+    "validation_years": [
+      2025
+    ],
+    "test_years": [
+      2026
+    ],
+    "sampling": "uniform reservoir sample per yearly Tenhou Houou TAR",
+    "max_games_per_shard": 120,
+    "input": "RiichiEnv MjaiReplay acting-seat observation; no opponent hands or future draws",
+    "target": "human discard among legal discard actions",
+    "training": "linear tile-conditioned softmax ranker, online cross-entropy SGD",
+    "epochs": 4,
+    "seed": 20261105
+  },
+  "training_epochs": [
+    {
+      "games_seen": 720,
+      "games_replayed": 720,
+      "games_rejected": 0,
+      "discard_decisions": 344518,
+      "expert_action_top1_accuracy": 0.4260009636651786,
+      "per_shard_replay": [
+        {
+          "shard": "tenhou-houou-2019.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2020.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2021.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2022.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2023.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2024.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        }
+      ],
+      "validation": {
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "discard_decisions": 56163,
+        "expert_action_top1_accuracy": 0.4382422591385788,
+        "per_shard_replay": [
+          {
+            "shard": "tenhou-houou-2025.tar",
+            "games_seen": 120,
+            "games_replayed": 120,
+            "games_rejected": 0,
+            "replay_failure_rate": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "games_seen": 720,
+      "games_replayed": 720,
+      "games_rejected": 0,
+      "discard_decisions": 344518,
+      "expert_action_top1_accuracy": 0.448232022709989,
+      "per_shard_replay": [
+        {
+          "shard": "tenhou-houou-2019.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2020.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2021.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2022.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2023.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2024.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        }
+      ],
+      "validation": {
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "discard_decisions": 56163,
+        "expert_action_top1_accuracy": 0.45204137955593543,
+        "per_shard_replay": [
+          {
+            "shard": "tenhou-houou-2025.tar",
+            "games_seen": 120,
+            "games_replayed": 120,
+            "games_rejected": 0,
+            "replay_failure_rate": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "games_seen": 720,
+      "games_replayed": 720,
+      "games_rejected": 0,
+      "discard_decisions": 344518,
+      "expert_action_top1_accuracy": 0.4491782722528286,
+      "per_shard_replay": [
+        {
+          "shard": "tenhou-houou-2019.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2020.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2021.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2022.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2023.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2024.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        }
+      ],
+      "validation": {
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "discard_decisions": 56163,
+        "expert_action_top1_accuracy": 0.45314530918932394,
+        "per_shard_replay": [
+          {
+            "shard": "tenhou-houou-2025.tar",
+            "games_seen": 120,
+            "games_replayed": 120,
+            "games_rejected": 0,
+            "replay_failure_rate": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "games_seen": 720,
+      "games_replayed": 720,
+      "games_rejected": 0,
+      "discard_decisions": 344518,
+      "expert_action_top1_accuracy": 0.44988650810697844,
+      "per_shard_replay": [
+        {
+          "shard": "tenhou-houou-2019.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2020.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2021.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2022.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2023.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        },
+        {
+          "shard": "tenhou-houou-2024.tar",
+          "games_seen": 120,
+          "games_replayed": 120,
+          "games_rejected": 0,
+          "replay_failure_rate": 0.0
+        }
+      ],
+      "validation": {
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "discard_decisions": 56163,
+        "expert_action_top1_accuracy": 0.44862275875576446,
+        "per_shard_replay": [
+          {
+            "shard": "tenhou-houou-2025.tar",
+            "games_seen": 120,
+            "games_replayed": 120,
+            "games_rejected": 0,
+            "replay_failure_rate": 0.0
+          }
+        ]
+      }
+    }
+  ],
+  "heldout_2026": {
+    "games_seen": 120,
+    "games_replayed": 120,
+    "games_rejected": 0,
+    "discard_decisions": 58170,
+    "expert_action_top1_accuracy": 0.44722365480488224,
+    "per_shard_replay": [
+      {
+        "shard": "tenhou-houou-2026.tar",
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "replay_failure_rate": 0.0
+      }
+    ]
+  },
+  "model_path": ".research/models/tenhou-imitation-v1.json",
+  "duration_seconds": 353.24,
+  "limitations": [
+    "Action agreement measures imitation, not optimal play or playing strength",
+    "Only discard choices are learned; legal wins remain automatic and calls remain conservative passes",
+    "Dataset card says other and upstream repository grants no CC BY rights over Tenhou logs; confirm terms with the rights holder before redistribution; this checkpoint stays local"
+  ],
+  "model_sha256": "b5b7476f580e26067a97871a751b69c39e4faed659e89aba74d94d533756f2b6"
+}

@@ -3,6 +3,9 @@
 import random
 
 from mapago_tools.strategy import POLICY_VERSION, RuleBasedBot
+from mapago_tools.mjsoul_model import (MODEL_PATH, TENHOU_MODEL_PATH,
+                                       POLICY_VERSION as MJSOUL_POLICY_VERSION,
+                                       TENHOU_POLICY_VERSION, ImitationBot)
 
 
 class LegalBot:
@@ -24,16 +27,30 @@ def bot_configs(names, seed):
         raise ValueError("Exactly four bot policies required")
     configs = []
     for seat, name in enumerate(names):
-        if name not in ("first-legal", "random-legal", "rule-based"):
+        if name not in ("first-legal", "random-legal", "rule-based", "mjsoul-imitation", "tenhou-imitation"):
             raise ValueError("Unknown bot policy")
+        version = (POLICY_VERSION if name == "rule-based" else
+                   MJSOUL_POLICY_VERSION if name == "mjsoul-imitation" else
+                   TENHOU_POLICY_VERSION if name == "tenhou-imitation" else "1")
         configs.append({"seat": seat, "name": name,
-                        "version": POLICY_VERSION if name == "rule-based" else "1",
+                        "version": version,
                         "seed": seed ^ (seat + 1),
                         **({"settings": {"ranking": ["shanten", "visible_ukeire", "riichi_tenpai", "riichi_safety", "dora", "tile_id"]}}
-                           if name == "rule-based" else {})})
+                           if name == "rule-based" else {}),
+                        **({"settings": {"model_path": str(MODEL_PATH)}}
+                           if name == "mjsoul-imitation" else
+                           {"settings": {"model_path": str(TENHOU_MODEL_PATH)}} if name == "tenhou-imitation" else {})})
     return configs
 
 
 def create_bots(configs):
-    return [RuleBasedBot(config["name"], config["seed"]) if config["name"] == "rule-based"
-            else LegalBot(config["name"], config["seed"]) for config in configs]
+    bots = []
+    for config in configs:
+        if config["name"] == "rule-based":
+            bot = RuleBasedBot(config["name"], config["seed"])
+        elif config["name"] in ("mjsoul-imitation", "tenhou-imitation"):
+            bot = ImitationBot(config["settings"]["model_path"])
+        else:
+            bot = LegalBot(config["name"], config["seed"])
+        bots.append(bot)
+    return bots

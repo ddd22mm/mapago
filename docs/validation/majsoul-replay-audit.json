@@ -1,0 +1,179 @@
+{
+  "schema": "mapago.mjsoul-replay-audit.v1",
+  "protocol": {
+    "source": "mjsoul",
+    "years": "2019-2024",
+    "sample_seed": 20261105,
+    "max_games_per_shard": 120,
+    "replay_rule": "mjsoul"
+  },
+  "sampled_archives": [
+    {
+      "shard": "majsoul-jade-2019.tar",
+      "games_seen": 13581,
+      "games_sampled": 120,
+      "bytes": 96000000
+    },
+    {
+      "shard": "majsoul-throne-2019.tar",
+      "games_seen": 7603,
+      "games_sampled": 120,
+      "bytes": 54620160
+    },
+    {
+      "shard": "majsoul-jade-2020.tar",
+      "games_seen": 55749,
+      "games_sampled": 120,
+      "bytes": 391813120
+    },
+    {
+      "shard": "majsoul-throne-2020.tar",
+      "games_seen": 20916,
+      "games_sampled": 120,
+      "bytes": 150097920
+    },
+    {
+      "shard": "majsoul-jade-2021.tar",
+      "games_seen": 152801,
+      "games_sampled": 120,
+      "bytes": 1060290560
+    },
+    {
+      "shard": "majsoul-throne-2021.tar",
+      "games_seen": 40805,
+      "games_sampled": 120,
+      "bytes": 293683200
+    },
+    {
+      "shard": "majsoul-jade-2022.tar",
+      "games_seen": 426892,
+      "games_sampled": 120,
+      "bytes": 2954997760
+    },
+    {
+      "shard": "majsoul-throne-2022.tar",
+      "games_seen": 158644,
+      "games_sampled": 120,
+      "bytes": 1139773440
+    },
+    {
+      "shard": "majsoul-jade-2023.tar",
+      "games_seen": 728090,
+      "games_sampled": 120,
+      "bytes": 5136517120
+    },
+    {
+      "shard": "majsoul-throne-2023.tar",
+      "games_seen": 243752,
+      "games_sampled": 120,
+      "bytes": 1777274880
+    },
+    {
+      "shard": "majsoul-jade-2024.tar",
+      "games_seen": 933050,
+      "games_sampled": 120,
+      "bytes": 6637342720
+    },
+    {
+      "shard": "majsoul-throne-2024.tar",
+      "games_seen": 288341,
+      "games_sampled": 120,
+      "bytes": 2116392960
+    }
+  ],
+  "replay": {
+    "games_seen": 1440,
+    "games_replayed": 1096,
+    "games_rejected": 344,
+    "per_shard": [
+      {
+        "shard": "majsoul-jade-2019.tar",
+        "games_seen": 120,
+        "games_replayed": 113,
+        "games_rejected": 7,
+        "replay_failure_rate": 0.058333333333333334
+      },
+      {
+        "shard": "majsoul-jade-2020.tar",
+        "games_seen": 120,
+        "games_replayed": 88,
+        "games_rejected": 32,
+        "replay_failure_rate": 0.26666666666666666
+      },
+      {
+        "shard": "majsoul-jade-2021.tar",
+        "games_seen": 120,
+        "games_replayed": 44,
+        "games_rejected": 76,
+        "replay_failure_rate": 0.6333333333333333
+      },
+      {
+        "shard": "majsoul-jade-2022.tar",
+        "games_seen": 120,
+        "games_replayed": 45,
+        "games_rejected": 75,
+        "replay_failure_rate": 0.625
+      },
+      {
+        "shard": "majsoul-jade-2023.tar",
+        "games_seen": 120,
+        "games_replayed": 43,
+        "games_rejected": 77,
+        "replay_failure_rate": 0.6416666666666667
+      },
+      {
+        "shard": "majsoul-jade-2024.tar",
+        "games_seen": 120,
+        "games_replayed": 44,
+        "games_rejected": 76,
+        "replay_failure_rate": 0.6333333333333333
+      },
+      {
+        "shard": "majsoul-throne-2019.tar",
+        "games_seen": 120,
+        "games_replayed": 119,
+        "games_rejected": 1,
+        "replay_failure_rate": 0.008333333333333333
+      },
+      {
+        "shard": "majsoul-throne-2020.tar",
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "replay_failure_rate": 0.0
+      },
+      {
+        "shard": "majsoul-throne-2021.tar",
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "replay_failure_rate": 0.0
+      },
+      {
+        "shard": "majsoul-throne-2022.tar",
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "replay_failure_rate": 0.0
+      },
+      {
+        "shard": "majsoul-throne-2023.tar",
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "replay_failure_rate": 0.0
+      },
+      {
+        "shard": "majsoul-throne-2024.tar",
+        "games_seen": 120,
+        "games_replayed": 120,
+        "games_rejected": 0,
+        "replay_failure_rate": 0.0
+      }
+    ]
+  },
+  "limitations": [
+    "Fixed-seed reservoir sample only, not a full shard legality audit",
+    "Rejected games are excluded whole; rejection reasons are not retained to avoid exposing raw event details"
+  ]
+}

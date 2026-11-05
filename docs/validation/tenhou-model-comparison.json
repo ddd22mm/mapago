@@ -1,0 +1,45 @@
+{
+  "schema": "mapago.tenhou-comparison.v1",
+  "engine_version": "0.4.11",
+  "protocol": {
+    "mode": "hanchan",
+    "rule": "tenhou",
+    "seed_blocks": 16,
+    "seeds": "20261105..20261120",
+    "seat_rotation": "one learned policy against three rule-based-v1 bots, each seat per seed",
+    "replay_verified": true,
+    "model": "tenhou-imitation-v1",
+    "baseline": "rule-based-v1"
+  },
+  "matches": 64,
+  "model_sha256": "b5b7476f580e26067a97871a751b69c39e4faed659e89aba74d94d533756f2b6",
+  "model": {
+    "seat_samples": 64,
+    "rounds": 636,
+    "mean_midrank": 3.5625,
+    "mean_score_delta": -21785.9375,
+    "win_count": 11,
+    "win_rate": 0.01729559748427673,
+    "deal_in_claim_count": 118,
+    "deal_in_claims_per_round": 0.18553459119496854
+  },
+  "baseline_opponents": {
+    "seat_samples": 192,
+    "rounds": 1908,
+    "mean_midrank": 2.1458333333333335,
+    "mean_score_delta": 7261.979166666667,
+    "win_count": 449,
+    "win_rate": 0.23532494758909853,
+    "deal_in_claim_count": 249,
+    "deal_in_claims_per_round": 0.13050314465408805
+  },
+  "paired_mean_rank_improvement": -1.4166666666666665,
+  "paired_mean_score_improvement": -29047.916666666668,
+  "limitations": [
+    "Exploratory finite-sample hanchan benchmark; not a rating",
+    "Baseline rows are opponents from the same mixed matches, so outcomes are correlated",
+    "Model imitates Tenhou Houou discard choices; action agreement and playing strength differ",
+    "No policy tuning on benchmark seeds"
+  ],
+  "data_rights": "Dataset card license is other; upstream grants no CC BY rights over Tenhou logs; rights holder terms unresolved; checkpoint stays local"
+}
